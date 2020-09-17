@@ -1,0 +1,5 @@
+// Top shows actions
+
+export const TOP_SHOWS_FETCH_START = 'TOP_SHOWS_FETCH_START';
+export const TOP_SHOWS_FETCH_SUCCESS = 'TOP_SHOWS_FETCH_SUCCESS';
+export const TOP_SHOWS_FETCH_FAIL = 'TOP_SHOWS_FETCH_FAAIL';
