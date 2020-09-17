@@ -1,9 +1,8 @@
 .card-collection {
-  margin: 0 auto;
-  margin-left: 2.5em;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 3em;
-
+  margin: 0 auto;
+  margin-left: 2.5em;
   margin-top: 3em;
 }

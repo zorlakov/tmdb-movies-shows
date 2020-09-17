@@ -1,5 +1,5 @@
 .card-container {
-  width: 38vw;
+  width: 35vw;
   height: 55vh;
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
   border-radius: 15px;
@@ -24,7 +24,7 @@
   background-position: center;
   margin-bottom: 5px;
   border-radius: 10px;
-  opacity: 0;
+  opacity: 1;
 }
 
 .basicInfo {
@@ -39,6 +39,6 @@
 }
 
 .image:hover {
-  opacity: 0;
+  opacity: 0.3;
   cursor: pointer;
 }

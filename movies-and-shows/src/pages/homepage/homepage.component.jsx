@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchTopShows } from '../../redux/actions/index';
-import Card from '../../components/card/card.component';
 import CardCollection from '../../components/card-collection/card-collection.component';
 import './homepage.styles.css';
 

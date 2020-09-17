@@ -2,7 +2,6 @@
   background-color: aliceblue;
   display: flex;
   flex-direction: row;
-
-  width: 100vw;
+  align-items: center;
   height: 10vh;
 }
