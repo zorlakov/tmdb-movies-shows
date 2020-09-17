@@ -5,33 +5,13 @@ import CardCollection from '../../components/card-collection/card-collection.com
 import './homepage.styles.css';
 import Loader from 'react-loader-spinner';
 
-/* class HomePage extends React.Component {
-  componentDidMount() {
-    const { dispatch } = this.props;
-    dispatch(fetchTopShows());
-  }
-
-  render() {
-    const shows = this.props;
-
-    return (
-      <div className='cards'>
-        {this.props.map(({ id, ...otherProps }) => (
-          <Card key={id} {...otherProps} />
-        ))}
-      </div>
-    );
-  }
-} */
-
 const HomePage = (props) => {
   const { data, loading } = props;
   const { fetchTopShows } = props;
   let list = [];
   useEffect(() => {
-    // const { dispatch } = this.props;
     fetchTopShows();
-  }, []);
+  }, [fetchTopShows]);
 
   list = data;
   console.log('DATADATA DATA IS:', data);
@@ -50,8 +30,6 @@ const HomePage = (props) => {
       ) : (
         <CardCollection items={list.shows} />
       )}
-
-      {/*  <CardCollection shows={list.shows} /> */}
     </div>
   );
 };
@@ -64,11 +42,3 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, { fetchTopShows })(HomePage);
-
-{
-  /*   {list.shows.data.map((item) => (
-        <div>
-          {item.name} {item.id}
-        </div>
-      ))} */
-}
