@@ -1,0 +1,8 @@
+.header {
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: row;
+
+  width: 100vw;
+  height: 10vh;
+}
