@@ -6,6 +6,7 @@ import {
 
 const INITIAL_STATE = {
   data: [],
+  loading: false,
 };
 
 export const showsReducer = (state = INITIAL_STATE, action) => {
@@ -13,16 +14,19 @@ export const showsReducer = (state = INITIAL_STATE, action) => {
     case TOP_SHOWS_FETCH_START:
       return {
         ...state,
+        loading: true,
       };
     case TOP_SHOWS_FETCH_SUCCESS:
       return {
         ...state,
         data: action.data,
+        loading: false,
       };
     case TOP_SHOWS_FETCH_FAIL:
       return {
         ...state,
         error: action.error,
+        loading: false,
       };
 
     default:

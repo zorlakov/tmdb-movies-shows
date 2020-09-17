@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchTopShows } from '../../redux/actions/index';
 import CardCollection from '../../components/card-collection/card-collection.component';
 import './homepage.styles.css';
+import Loader from 'react-loader-spinner';
 
 /* class HomePage extends React.Component {
   componentDidMount() {
@@ -24,7 +25,7 @@ import './homepage.styles.css';
 } */
 
 const HomePage = (props) => {
-  const { data } = props;
+  const { data, loading } = props;
   const { fetchTopShows } = props;
   let list = [];
   useEffect(() => {
@@ -38,7 +39,19 @@ const HomePage = (props) => {
   console.log('PROPS IS:', props);
   return (
     <div className='cards'>
-      <CardCollection shows={list.shows} />
+      {loading ? (
+        <Loader
+          type='Puff'
+          color='#00BFFF'
+          height={100}
+          width={100}
+          timeout={2000}
+        />
+      ) : (
+        <CardCollection shows={list.shows} />
+      )}
+
+      {/*  <CardCollection shows={list.shows} /> */}
     </div>
   );
 };
@@ -46,6 +59,7 @@ const HomePage = (props) => {
 const mapStateToProps = (state) => {
   return {
     data: state,
+    loading: state.loading,
   };
 };
 
