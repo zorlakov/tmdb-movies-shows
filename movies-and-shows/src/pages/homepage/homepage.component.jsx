@@ -4,7 +4,6 @@ import { fetchTopShows } from '../../redux/actions/index';
 import Card from '../../components/card/card.component';
 import CardCollection from '../../components/card-collection/card-collection.component';
 import './homepage.styles.css';
-import CardCollection from '../../components/card-collection/card-collection.component';
 
 /* class HomePage extends React.Component {
   componentDidMount() {
@@ -37,15 +36,10 @@ const HomePage = (props) => {
   list = data;
   console.log('DATADATA DATA IS:', data);
 
+  console.log('PROPS IS:', props);
   return (
     <div className='cards'>
-      {data.shows.data.map((show) => (
-        <CardCollection key={show.id} show={show} />
-      ))}
-
-      {/*   {list.shows.data.map((item) => (
-        <div> {item.name} </div>
-      ))} */}
+      <CardCollection shows={list.shows} />
     </div>
   );
 };
@@ -57,3 +51,11 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, { fetchTopShows })(HomePage);
+
+{
+  /*   {list.shows.data.map((item) => (
+        <div>
+          {item.name} {item.id}
+        </div>
+      ))} */
+}

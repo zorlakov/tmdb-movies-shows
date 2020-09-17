@@ -1,13 +1,12 @@
 import React from 'react';
 import Card from '../card/card.component';
 import './card-collection.styles.css';
-import Card from '../card/card.component';
 
-const CardCollection = () => (
+const CardCollection = ({ shows }) => (
   <div className='card-collection'>
-    <div className='item-list'>{MAPAPPA}</div>
-
-    <h1 className='title'> title </h1>
+    {shows.data.map((show) => (
+      <Card key={show.id} show={show} />
+    ))}
   </div>
 );
 

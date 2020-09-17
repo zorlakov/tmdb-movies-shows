@@ -3,13 +3,18 @@ import './card.styles.css';
 
 const Card = ({ show }) => (
   <div className='card-container'>
-    {/*   <div
+    <div
       className='image'
       style={{
-        backgroundImage: `url(https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_.jpg)`,
+        backgroundImage: `url(https://image.tmdb.org/t/p/w1280${show.backdrop_path})`,
       }}
     ></div>
-  */}
+    <div className='basicInfo'>
+      {' '}
+      <h1 className='title'> {show.name} </h1>
+      <h2 className='title'> ({show.first_air_date.substring(0, 4)})</h2>
+      <h3 className='title'> Rating: {show.vote_average} </h3>
+    </div>
   </div>
 );
 
