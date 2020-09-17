@@ -5,10 +5,10 @@ import './customButton.styles.css';
 
 const CustomButton = ({ name }) => (
   <button className='custom-button'>
-    {name == 'movies' ? (
-      <img className='image' src={movieIcon} />
+    {name === 'movies' ? (
+      <img alt='icon' className='image' src={movieIcon} />
     ) : (
-      <img className='image' src={tvIcon} />
+      <img alt='icon' className='image' src={tvIcon} />
     )}
     {name}
   </button>

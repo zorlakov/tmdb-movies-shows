@@ -1,24 +1,31 @@
-import ShowsActionTypes from './shows.types';
+import {
+  TOP_SHOWS_FETCH_START,
+  TOP_SHOWS_FETCH_SUCCESS,
+  TOP_SHOWS_FETCH_FAIL,
+} from '../actions/actionTypes';
 
 const INITIAL_STATE = {
   data: [],
 };
 
-const showsReducer = (state = INITIAL_STATE, action) => {
+export const showsReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case ShowsActionTypes.FETCH_TOP_SHOWS_START:
+    case TOP_SHOWS_FETCH_START:
       return {
         ...state,
       };
-    case ShowsActionTypes.FETCH_TOP_SHOWS_SUCCESS:
+    case TOP_SHOWS_FETCH_SUCCESS:
       return {
         ...state,
         data: action.data,
+      };
+    case TOP_SHOWS_FETCH_FAIL:
+      return {
+        ...state,
+        error: action.error,
       };
 
     default:
       return state;
   }
 };
-
-export default showsReducer;
