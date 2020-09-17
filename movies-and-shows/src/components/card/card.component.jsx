@@ -9,11 +9,10 @@ const Card = ({ show }) => (
         backgroundImage: `url(https://image.tmdb.org/t/p/w1280${show.backdrop_path})`,
       }}
     ></div>
-    <div className='basicInfo'>
+    <div className='basic-info'>
       {' '}
-      <h1 className='title'> {show.name} </h1>
-      <h2 className='title'> ({show.first_air_date.substring(0, 4)})</h2>
-      <h3 className='title'> Rating: {show.vote_average} </h3>
+      <p className='title'> {show.name} </p>
+      <p className='title'> ({show.first_air_date.substring(0, 4)})</p>
     </div>
   </div>
 );
