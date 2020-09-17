@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchTopShows } from '../../redux/actions/index';
 import Card from '../../components/card/card.component';
-
+import CardCollection from '../../components/card-collection/card-collection.component';
 import './homepage.styles.css';
+import CardCollection from '../../components/card-collection/card-collection.component';
 
 /* class HomePage extends React.Component {
   componentDidMount() {
@@ -27,19 +28,24 @@ import './homepage.styles.css';
 const HomePage = (props) => {
   const { data } = props;
   const { fetchTopShows } = props;
-
+  let list = [];
   useEffect(() => {
     // const { dispatch } = this.props;
     fetchTopShows();
   }, []);
 
-  console.log(data);
+  list = data;
+  console.log('DATADATA DATA IS:', data);
 
   return (
     <div className='cards'>
       {data.shows.data.map((show) => (
-        <Card key={show.id} show={show} />
+        <CardCollection key={show.id} show={show} />
       ))}
+
+      {/*   {list.shows.data.map((item) => (
+        <div> {item.name} </div>
+      ))} */}
     </div>
   );
 };
