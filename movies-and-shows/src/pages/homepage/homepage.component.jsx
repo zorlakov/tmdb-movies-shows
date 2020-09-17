@@ -25,7 +25,7 @@ import './homepage.styles.css';
 } */
 
 const HomePage = (props) => {
-  const data = props;
+  const { data } = props;
   const { fetchTopShows } = props;
 
   useEffect(() => {
@@ -33,7 +33,15 @@ const HomePage = (props) => {
     fetchTopShows();
   }, []);
 
-  return <div> OASOOSFAOFSOA </div>;
+  console.log(data);
+
+  return (
+    <div className='cards'>
+      {data.shows.data.map((show) => (
+        <Card key={show.id} show={show} />
+      ))}
+    </div>
+  );
 };
 
 const mapStateToProps = (state) => {
