@@ -1,6 +1,74 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { fetchTopMovies } from '../../redux/actions/index';
+import CardCollection from '../../components/card-collection/card-collection.component';
 import './movies.styles.css';
+import Loader from 'react-loader-spinner';
 
-const MoviesPage = () => <div>HOMEPAGE MOVIEIEIEIEIS</div>;
+/* class HomePage extends React.Component {
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(fetchTopShows());
+  }
 
-export default MoviesPage;
+  render() {
+    const shows = this.props;
+
+    return (
+      <div className='cards'>
+        {this.props.map(({ id, ...otherProps }) => (
+          <Card key={id} {...otherProps} />
+        ))}
+      </div>
+    );
+  }
+} */
+
+const MoviesPage = (props) => {
+  const { data, loading } = props;
+  const { fetchTopMovies } = props;
+  let list = [];
+  useEffect(() => {
+    // const { dispatch } = this.props;
+    fetchTopMovies();
+  }, []);
+
+  list = data;
+  console.log('DATADATA DATA IS:', data);
+
+  console.log('PROPS IS:', props);
+  return (
+    <div className='cards'>
+      {loading ? (
+        <Loader
+          type='Puff'
+          color='#00BFFF'
+          height={100}
+          width={100}
+          timeout={2000}
+        />
+      ) : (
+        <CardCollection items={list.movies} />
+      )}
+
+      {/*  <CardCollection shows={list.shows} /> */}
+    </div>
+  );
+};
+
+const mapStateToProps = (state) => {
+  return {
+    data: state,
+    loading: state.loading,
+  };
+};
+
+export default connect(mapStateToProps, { fetchTopMovies })(MoviesPage);
+
+{
+  /*   {list.shows.data.map((item) => (
+        <div>
+          {item.name} {item.id}
+        </div>
+      ))} */
+}

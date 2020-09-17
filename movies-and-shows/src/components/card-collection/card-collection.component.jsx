@@ -2,12 +2,12 @@ import React from 'react';
 import Card from '../card/card.component';
 import './card-collection.styles.css';
 
-const CardCollection = ({ shows }) => (
+const CardCollection = ({ items }) => (
   <div className='card-collection'>
-    {shows.data
-      .filter((show, idx) => idx < 10)
-      .map((show) => (
-        <Card key={show.id} show={show} />
+    {items.data
+      .filter((item, idx) => idx < 10)
+      .map((item) => (
+        <Card key={item.id} item={item} />
       ))}
   </div>
 );

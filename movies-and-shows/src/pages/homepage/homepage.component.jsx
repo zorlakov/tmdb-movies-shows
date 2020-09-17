@@ -48,7 +48,7 @@ const HomePage = (props) => {
           timeout={2000}
         />
       ) : (
-        <CardCollection shows={list.shows} />
+        <CardCollection items={list.shows} />
       )}
 
       {/*  <CardCollection shows={list.shows} /> */}
