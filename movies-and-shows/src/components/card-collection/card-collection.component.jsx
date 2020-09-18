@@ -10,7 +10,10 @@ class CardCollection extends React.Component {
         {this.props.items.data
           .filter((item, idx) => idx < 10)
           .map((item) => (
-            <Link to={{ pathname: `/details/${item.id}`, state: { item } }}>
+            <Link
+              className='link-styles'
+              to={{ pathname: `/details/${item.id}`, state: { item } }}
+            >
               <Card key={item.id} item={item} />
             </Link>
           ))}

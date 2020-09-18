@@ -7,6 +7,12 @@
   margin-top: 3em;
 }
 
+.link-styles {
+  text-decoration: none;
+  font-family: 'Ubuntu';
+  color: black;
+}
+
 @media only screen and (max-width: 750px) {
   .card-collection {
     display: flex;
