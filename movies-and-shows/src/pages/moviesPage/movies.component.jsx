@@ -14,9 +14,7 @@ const MoviesPage = (props) => {
   }, [fetchTopMovies]);
 
   list = data;
-  console.log('DATADATA DATA IS:', data);
 
-  console.log('PROPS IS:', props);
   return (
     <div className='cards'>
       {loading ? (

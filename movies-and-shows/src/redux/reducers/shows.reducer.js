@@ -9,6 +9,7 @@ import {
 
 const INITIAL_STATE = {
   data: [],
+  show: [],
   loading: false,
 };
 
@@ -39,7 +40,7 @@ export const showsReducer = (state = INITIAL_STATE, action) => {
     case SHOW_DETAILS_FETCH_SUCCESS:
       return {
         ...state,
-        data: action.data,
+        show: action.data,
         loading: false,
       };
     case SHOW_DETAILS_FETCH_FAIL:

@@ -1,15 +1,22 @@
 import React from 'react';
 import Card from '../card/card.component';
 import './card-collection.styles.css';
+import { Link } from 'react-router-dom';
 
-const CardCollection = ({ items }) => (
-  <div className='card-collection'>
-    {items.data
-      .filter((item, idx) => idx < 10)
-      .map((item) => (
-        <Card key={item.id} item={item} />
-      ))}
-  </div>
-);
+class CardCollection extends React.Component {
+  render() {
+    return (
+      <div className='card-collection'>
+        {this.props.items.data
+          .filter((item, idx) => idx < 10)
+          .map((item) => (
+            <Link to={{ pathname: `/details/${item.id}`, state: { item } }}>
+              <Card key={item.id} item={item} />
+            </Link>
+          ))}
+      </div>
+    );
+  }
+}
 
 export default CardCollection;

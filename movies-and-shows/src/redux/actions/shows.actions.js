@@ -66,11 +66,9 @@ export const fetchShowDetails = (id) => {
   return (dispatch) => {
     dispatch(showDetailsFetchStart());
     return fetch(
-      // add id here
-      'https://api.themoviedb.org/3/tv/1?api_key=7cf5283d520db6ff54c3a9e081e893ea&language=en-US&append_to_response=7cf5283d520db6ff54c3a9e081e893ea'
+      `https://api.themoviedb.org/3/tv/${id}?api_key=7cf5283d520db6ff54c3a9e081e893ea&language=en-US&append_to_response=7cf5283d520db6ff54c3a9e081e893ea`
     )
       .then((response) => response.json())
-      .then((json) => json.results)
       .then((data) => {
         dispatch(showDetailsFetchSuccess(data));
       })

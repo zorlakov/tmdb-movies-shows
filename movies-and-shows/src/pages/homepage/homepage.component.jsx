@@ -9,14 +9,13 @@ const HomePage = (props) => {
   const { data, loading } = props;
   const { fetchTopShows } = props;
   let list = [];
+
   useEffect(() => {
     fetchTopShows();
   }, [fetchTopShows]);
 
   list = data;
-  console.log('DATADATA DATA IS:', data);
 
-  console.log('PROPS IS:', props);
   return (
     <div className='cards'>
       {loading ? (
