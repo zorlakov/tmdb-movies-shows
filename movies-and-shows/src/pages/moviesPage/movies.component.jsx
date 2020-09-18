@@ -23,7 +23,7 @@ const MoviesPage = (props) => {
           color='#00BFFF'
           height={100}
           width={100}
-          timeout={2000}
+          //  timeout={2000}
         />
       ) : (
         <CardCollection items={list.movies} />
