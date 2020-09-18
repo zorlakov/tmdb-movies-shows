@@ -6,7 +6,8 @@ import './show-details.styles.css';
 
 const ShowDetailsPage = (props) => {
   const { fetchShowDetails, fetchMovieDetails } = props;
-
+  const movie = props.movie;
+  const show = props.show;
   useEffect(() => {
     if (props.location.state.item.name) {
       fetchShowDetails(props.location.state.item.id);
@@ -20,12 +21,21 @@ const ShowDetailsPage = (props) => {
     props.location.state.item.name,
   ]);
 
-  return <Details item={props.location.state.item} />;
+  return (
+    <div>
+      {props.location.state.item.name ? (
+        <Details item={props.location.state.item} show={show} />
+      ) : (
+        <Details item={props.location.state.item} movie={movie} />
+      )}
+    </div>
+  );
 };
 
 const mapStateToProps = (state) => {
   return {
-    loading: state.loading,
+    movie: state.movies.movie,
+    show: state.shows.show,
   };
 };
 

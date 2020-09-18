@@ -7,8 +7,10 @@ import './details.styles.css';
 class Details extends React.Component {
   render() {
     const item = this.props.item;
-    const showName = this.props.item.name;
+    const show = this.props.show;
+    const movie = this.props.movie;
 
+    const showName = this.props.item.name;
     return (
       // <div className='movie-details'>Name: {this.props.item.name}</div>
 
@@ -39,6 +41,26 @@ class Details extends React.Component {
               {item.overview}
             </p>
             <p>Rating: {item.vote_average}</p>
+            <p>Number of votes: {item.vote_count}</p>
+            {showName ? (
+              [
+                <div className='show-info'>
+                  <p>Seasons: {show.number_of_seasons} </p>
+                  <p> Episodes: {show.number_of_episodes} </p>
+                  <p>Episode length: {show.episode_run_time} minutes </p>
+                  <p> Status: {show.status} </p>
+                </div>,
+              ]
+            ) : (
+              <div className='movie-info'>
+                <p> Runtime: {movie.runtime} </p>
+                <p> Status: {movie.status}</p>
+              </div>
+            )}
+
+            {/*  {this.props.genres.map((genre) => (
+              <p className='overview-text'> {genre.name} </p>
+            ))} */}
           </div>
         </div>
       </div>

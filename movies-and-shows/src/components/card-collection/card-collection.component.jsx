@@ -12,6 +12,7 @@ class CardCollection extends React.Component {
           .map((item) => (
             <Link
               className='link-styles'
+              key={item.id}
               to={{ pathname: `/details/${item.id}`, state: { item } }}
             >
               <Card key={item.id} item={item} />
