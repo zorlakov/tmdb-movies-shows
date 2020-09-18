@@ -7,6 +7,8 @@ import {
   MOVIE_DETAILS_FETCH_FAIL,
 } from './actionTypes';
 
+import { API_KEY, URL_MOVIE_DETAILS, URL_MOVIE_LIST } from '../../utils/api';
+
 const topMoviesFetchStart = () => {
   return {
     type: TOP_MOVIES_FETCH_START,
@@ -48,11 +50,10 @@ const movieDetailsFetchFail = (error) => {
 };
 
 export const fetchTopMovies = () => {
+  let url = URL_MOVIE_LIST + API_KEY;
   return (dispatch) => {
     dispatch(topMoviesFetchStart());
-    return fetch(
-      'https://api.themoviedb.org/3/movie/top_rated?api_key=7cf5283d520db6ff54c3a9e081e893ea&language=en-US&page=1'
-    )
+    return fetch(url)
       .then((response) => response.json())
       .then((json) => json.results)
       .then((data) => {
@@ -63,11 +64,10 @@ export const fetchTopMovies = () => {
 };
 
 export const fetchMovieDetails = (id) => {
+  let url = URL_MOVIE_DETAILS + id + API_KEY;
   return (dispatch) => {
     dispatch(movieDetailsFetchStart());
-    return fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=7cf5283d520db6ff54c3a9e081e893ea&language=en-US`
-    )
+    return fetch(url)
       .then((response) => response.json())
       .then((data) => {
         dispatch(movieDetailsFetchSuccess(data));

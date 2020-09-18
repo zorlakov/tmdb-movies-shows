@@ -27,7 +27,7 @@ class Details extends React.Component {
           ) : (
             <h1 className='details-title'>
               {' '}
-              {item.title}({item.release_date.substring(0, 4)})
+              {item.title} ({item.release_date.substring(0, 4)})
             </h1>
           )}
         </div>
@@ -38,6 +38,7 @@ class Details extends React.Component {
               Summary: <br></br>
               {item.overview}
             </p>
+            <p>Rating: {item.vote_average}</p>
           </div>
         </div>
       </div>

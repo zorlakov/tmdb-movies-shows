@@ -3,25 +3,7 @@
   flex-direction: row;
   font-family: 'Ubuntu';
   position: relative;
-}
-
-.item-details:before {
-  content: ' ';
-  display: block;
-  position: absolute;
-  left: 0;
-  width: 100vw;
   height: 90vh;
-  z-index: -1;
-  opacity: 0.45;
-  background-image: url('https://wallpaperaccess.com/full/1679629.jpg');
-  background-repeat: no-repeat;
-  background-position: 50% 0;
-  -ms-background-size: cover;
-  -o-background-size: cover;
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  background-size: cover;
 }
 
 .main-details {

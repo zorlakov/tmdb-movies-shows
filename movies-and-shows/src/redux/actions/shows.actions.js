@@ -7,6 +7,8 @@ import {
   SHOW_DETAILS_FETCH_FAIL,
 } from './actionTypes';
 
+import { API_KEY, URL_SHOW_DETAILS, URL_SHOW_LIST } from '../../utils/api';
+
 const topShowsFetchStart = () => {
   return {
     type: TOP_SHOWS_FETCH_START,
@@ -48,11 +50,10 @@ const showDetailsFetchFail = (error) => {
 };
 
 export const fetchTopShows = () => {
+  let url = URL_SHOW_LIST + API_KEY;
   return (dispatch) => {
     dispatch(topShowsFetchStart());
-    return fetch(
-      'https://api.themoviedb.org/3/tv/top_rated?api_key=7cf5283d520db6ff54c3a9e081e893ea&language=en-US&page=1'
-    )
+    return fetch(url)
       .then((response) => response.json())
       .then((json) => json.results)
       .then((data) => {
@@ -63,11 +64,10 @@ export const fetchTopShows = () => {
 };
 
 export const fetchShowDetails = (id) => {
+  let url = URL_SHOW_DETAILS + id + API_KEY;
   return (dispatch) => {
     dispatch(showDetailsFetchStart());
-    return fetch(
-      `https://api.themoviedb.org/3/tv/${id}?api_key=7cf5283d520db6ff54c3a9e081e893ea&language=en-US&append_to_response=7cf5283d520db6ff54c3a9e081e893ea`
-    )
+    return fetch(url)
       .then((response) => response.json())
       .then((data) => {
         dispatch(showDetailsFetchSuccess(data));
