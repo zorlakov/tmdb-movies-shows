@@ -5,6 +5,7 @@ import {
   SHOW_DETAILS_FETCH_START,
   SHOW_DETAILS_FETCH_SUCCESS,
   SHOW_DETAILS_FETCH_FAIL,
+  SET_SHOW_SEARCH_QUERY_SUCCESS,
 } from './actionTypes';
 
 import { API_KEY, URL_SHOW_DETAILS, URL_SHOW_LIST } from '../../utils/api';
@@ -46,6 +47,13 @@ const showDetailsFetchFail = (error) => {
   return {
     type: SHOW_DETAILS_FETCH_FAIL,
     error,
+  };
+};
+
+export const setShowSearchQuery = (data) => {
+  return {
+    type: SET_SHOW_SEARCH_QUERY_SUCCESS,
+    data,
   };
 };
 

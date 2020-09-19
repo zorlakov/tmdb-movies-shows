@@ -11,7 +11,7 @@ import './App.css';
 function App() {
   return (
     <div className='App'>
-      <Header />
+      <Header className='sticky-header' />
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route exact path='/movies' component={MoviesPage} />

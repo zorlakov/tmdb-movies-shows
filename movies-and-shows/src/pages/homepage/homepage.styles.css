@@ -1,4 +1,13 @@
 .cards {
-  width: 90vw;
+  width: 100vw;
   margin: auto;
+  margin-left: 0;
+  margin-right: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(8, 147, 222, 1) 15%,
+    rgba(1, 188, 239, 1) 77%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }

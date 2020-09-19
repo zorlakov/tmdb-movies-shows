@@ -36,6 +36,7 @@ const HomePage = (props) => {
 const mapStateToProps = (state) => {
   return {
     data: state,
+    showSearchQuery: state.shows.showSearchQuery,
     loading: state.loading,
   };
 };

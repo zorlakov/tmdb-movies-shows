@@ -1,5 +1,6 @@
 import React from 'react';
 import CustomButton from '../customButton/customButton.component';
+import SearchBox from '../search-box/search-box.component';
 import { Link } from 'react-router-dom';
 
 import './header.styles.css';
@@ -12,6 +13,7 @@ const Header = () => (
     <Link to='/'>
       <CustomButton name={'shows'}></CustomButton>
     </Link>
+    <SearchBox />
   </div>
 );
 
