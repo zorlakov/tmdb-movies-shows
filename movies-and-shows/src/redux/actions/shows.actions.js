@@ -6,9 +6,18 @@ import {
   SHOW_DETAILS_FETCH_SUCCESS,
   SHOW_DETAILS_FETCH_FAIL,
   SET_SHOW_SEARCH_QUERY_SUCCESS,
+  SEARCH_SHOWS_START,
+  SEARCH_SHOWS_SUCCESS,
+  SEARCH_SHOWS_FAIL,
 } from './actionTypes';
 
-import { API_KEY, URL_SHOW_DETAILS, URL_SHOW_LIST } from '../../utils/api';
+import {
+  API_KEY,
+  URL_SHOW_DETAILS,
+  URL_SHOW_LIST,
+  URL_SHOWS_SEARCH,
+  URL_QUERY,
+} from '../../utils/api';
 
 const topShowsFetchStart = () => {
   return {
@@ -54,6 +63,39 @@ export const setShowSearchQuery = (data) => {
   return {
     type: SET_SHOW_SEARCH_QUERY_SUCCESS,
     data,
+  };
+};
+
+const showsSearchFetchStart = () => {
+  return {
+    type: SEARCH_SHOWS_START,
+  };
+};
+
+const showsSearchFetchSuccess = (data) => {
+  return {
+    type: SEARCH_SHOWS_SUCCESS,
+    data,
+  };
+};
+
+const showsSearchFetchFail = (error) => {
+  return {
+    type: SEARCH_SHOWS_FAIL,
+    error,
+  };
+};
+
+export const fetchShowSearch = (query) => {
+  let url = URL_SHOWS_SEARCH + URL_QUERY + query + API_KEY;
+  return (dispatch) => {
+    dispatch(showsSearchFetchStart());
+    return fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        dispatch(showsSearchFetchSuccess(data));
+      })
+      .catch((err) => dispatch(showsSearchFetchFail(err)));
   };
 };
 

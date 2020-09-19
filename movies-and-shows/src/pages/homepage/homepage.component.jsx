@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchTopShows } from '../../redux/actions/index';
+import { fetchTopShows, fetchShowSearch } from '../../redux/actions/index';
 import CardCollection from '../../components/card-collection/card-collection.component';
 import './homepage.styles.css';
 import Loader from 'react-loader-spinner';
 
 const HomePage = (props) => {
   const { data, loading } = props;
-  const { fetchTopShows } = props;
+  const { fetchTopShows, fetchShowSearch } = props;
   let list = [];
 
   useEffect(() => {
@@ -20,10 +20,10 @@ const HomePage = (props) => {
     <div className='cards'>
       {loading ? (
         <Loader
-          type='Puff'
-          color='#00BFFF'
-          height={100}
-          width={100}
+          className='loader'
+          type='Grid'
+          color='#FFFFF'
+
           //   timeout={2000}
         />
       ) : (
@@ -37,8 +37,11 @@ const mapStateToProps = (state) => {
   return {
     data: state,
     showSearchQuery: state.shows.showSearchQuery,
-    loading: state.loading,
+    showSearchResults: state.shows.showSearchResults,
+    loading: state.shows.loading,
   };
 };
 
-export default connect(mapStateToProps, { fetchTopShows })(HomePage);
+export default connect(mapStateToProps, { fetchTopShows, fetchShowSearch })(
+  HomePage
+);

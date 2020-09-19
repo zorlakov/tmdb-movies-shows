@@ -19,11 +19,11 @@ const MoviesPage = (props) => {
     <div className='cards'>
       {loading ? (
         <Loader
-          type='Puff'
-          color='#00BFFF'
-          height={100}
-          width={100}
-          //  timeout={2000}
+          className='loader'
+          type='Grid'
+          color='#FFFFF'
+
+          //   timeout={2000}
         />
       ) : (
         <CardCollection items={list.movies} />
@@ -35,7 +35,7 @@ const MoviesPage = (props) => {
 const mapStateToProps = (state) => {
   return {
     data: state,
-    loading: state.loading,
+    loading: state.movies.loading,
   };
 };
 

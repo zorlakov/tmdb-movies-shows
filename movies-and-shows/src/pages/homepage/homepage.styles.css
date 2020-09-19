@@ -11,3 +11,9 @@
     rgba(0, 0, 0, 1) 100%
   );
 }
+
+.loader {
+  height: 90vh;
+  padding-top: 15em;
+  padding-left: 45%;
+}

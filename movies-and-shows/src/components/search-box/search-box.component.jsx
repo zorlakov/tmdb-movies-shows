@@ -20,7 +20,7 @@ class SearchBox extends React.Component {
   };
 
   componentDidUpdate() {
-    if (window.location.pathname == '/') {
+    if (window.location.pathname === '/') {
       this.props.setShowSearchQuery(this.state.searchQuery);
     } else {
       this.props.setMovieSearchQuery(this.state.searchQuery);
