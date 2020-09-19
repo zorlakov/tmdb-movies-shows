@@ -5,6 +5,7 @@
   margin: 0 auto;
   margin-left: 7em;
   padding-top: 4em;
+  min-height: 90vh;
 }
 
 .link-styles {

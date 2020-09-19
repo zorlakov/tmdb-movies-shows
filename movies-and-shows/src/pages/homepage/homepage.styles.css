@@ -17,3 +17,8 @@
   padding-top: 15em;
   padding-left: 45%;
 }
+
+.no-results {
+  font-size: 100px;
+  padding-top: 100px;
+}

@@ -87,11 +87,13 @@ const showsSearchFetchFail = (error) => {
 };
 
 export const fetchShowSearch = (query) => {
-  let url = URL_SHOWS_SEARCH + URL_QUERY + query + API_KEY;
+  let url = URL_SHOWS_SEARCH + API_KEY + URL_QUERY + query;
   return (dispatch) => {
     dispatch(showsSearchFetchStart());
     return fetch(url)
       .then((response) => response.json())
+      .then((json) => json.results)
+
       .then((data) => {
         dispatch(showsSearchFetchSuccess(data));
       })

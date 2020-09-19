@@ -26,7 +26,7 @@ const MoviesPage = (props) => {
           //   timeout={2000}
         />
       ) : (
-        <CardCollection items={list.movies} />
+        <CardCollection items={list.movies.data} />
       )}
     </div>
   );

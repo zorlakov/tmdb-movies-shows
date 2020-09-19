@@ -7,7 +7,7 @@ class CardCollection extends React.Component {
   render() {
     return (
       <div className='card-collection'>
-        {this.props.items.data
+        {this.props.items
           .filter((item, idx) => idx < 10)
           .map((item) => (
             <Link
