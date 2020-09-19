@@ -25,3 +25,7 @@ export const MOVIE_DETAILS_FETCH_FAIL = 'MOVIE_DETAILS_FETCH_FAIL';
 // Show search & search query
 
 export const SET_SHOW_SEARCH_QUERY_SUCCESS = 'SET_SHOW_SEARCH_QUERY_SUCCESS';
+
+// Movie search & search query
+
+export const SET_MOVIE_SEARCH_QUERY_SUCCESS = 'SET_MOVIE_SEARCH_QUERY_SUCCESS';

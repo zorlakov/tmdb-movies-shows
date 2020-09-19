@@ -8,7 +8,7 @@ import {
   SET_SHOW_SEARCH_QUERY_SUCCESS,
 } from '../actions/actionTypes';
 
-import { setShowSearchQueryUtil } from './shows.utils';
+import { setSearchQueryUtil } from './utils';
 
 const INITIAL_STATE = {
   data: [],
@@ -57,7 +57,7 @@ export const showsReducer = (state = INITIAL_STATE, action) => {
     case SET_SHOW_SEARCH_QUERY_SUCCESS:
       return {
         ...state,
-        showSearchQuery: setShowSearchQueryUtil(action.data),
+        showSearchQuery: setSearchQueryUtil(action.data),
         loading: false,
       };
 

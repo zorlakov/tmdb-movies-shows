@@ -5,6 +5,7 @@ import {
   MOVIE_DETAILS_FETCH_START,
   MOVIE_DETAILS_FETCH_SUCCESS,
   MOVIE_DETAILS_FETCH_FAIL,
+  SET_MOVIE_SEARCH_QUERY_SUCCESS,
 } from './actionTypes';
 
 import { API_KEY, URL_MOVIE_DETAILS, URL_MOVIE_LIST } from '../../utils/api';
@@ -46,6 +47,13 @@ const movieDetailsFetchFail = (error) => {
   return {
     type: MOVIE_DETAILS_FETCH_FAIL,
     error,
+  };
+};
+
+export const setMovieSearchQuery = (data) => {
+  return {
+    type: SET_MOVIE_SEARCH_QUERY_SUCCESS,
+    data,
   };
 };
 
