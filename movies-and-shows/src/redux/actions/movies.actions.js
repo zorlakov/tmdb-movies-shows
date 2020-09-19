@@ -6,9 +6,18 @@ import {
   MOVIE_DETAILS_FETCH_SUCCESS,
   MOVIE_DETAILS_FETCH_FAIL,
   SET_MOVIE_SEARCH_QUERY_SUCCESS,
+  SEARCH_MOVIES_START,
+  SEARCH_MOVIES_SUCCESS,
+  SEARCH_MOVIES_FAIL,
 } from './actionTypes';
 
-import { API_KEY, URL_MOVIE_DETAILS, URL_MOVIE_LIST } from '../../utils/api';
+import {
+  API_KEY,
+  URL_MOVIE_DETAILS,
+  URL_MOVIE_LIST,
+  URL_MOVIES_SEARCH,
+  URL_QUERY,
+} from '../../utils/api';
 
 const topMoviesFetchStart = () => {
   return {
@@ -54,6 +63,40 @@ export const setMovieSearchQuery = (data) => {
   return {
     type: SET_MOVIE_SEARCH_QUERY_SUCCESS,
     data,
+  };
+};
+
+const moviesSearchFetchStart = () => {
+  return {
+    type: SEARCH_MOVIES_START,
+  };
+};
+
+const moviesSearchFetchSuccess = (data) => {
+  return {
+    type: SEARCH_MOVIES_SUCCESS,
+    data,
+  };
+};
+
+const moviesSearchFetchFail = (error) => {
+  return {
+    type: SEARCH_MOVIES_FAIL,
+    error,
+  };
+};
+
+export const fetchMovieSearch = (query) => {
+  let url = URL_MOVIES_SEARCH + API_KEY + URL_QUERY + query;
+  return (dispatch) => {
+    dispatch(moviesSearchFetchStart());
+    return fetch(url)
+      .then((response) => response.json())
+      .then((json) => json.results)
+      .then((data) => {
+        dispatch(moviesSearchFetchSuccess(data));
+      })
+      .catch((err) => dispatch(moviesSearchFetchFail(err)));
   };
 };
 

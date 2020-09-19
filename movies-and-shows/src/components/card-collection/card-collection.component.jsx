@@ -8,7 +8,7 @@ class CardCollection extends React.Component {
     return (
       <div className='card-collection'>
         {this.props.items
-          .filter((item, idx) => idx < 10)
+          .filter((item, idx) => idx < this.props.count)
           .map((item) => (
             <Link
               className='link-styles'

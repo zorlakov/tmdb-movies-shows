@@ -6,13 +6,18 @@ import {
   MOVIE_DETAILS_FETCH_SUCCESS,
   MOVIE_DETAILS_FETCH_FAIL,
   SET_MOVIE_SEARCH_QUERY_SUCCESS,
+  SEARCH_MOVIES_START,
+  SEARCH_MOVIES_SUCCESS,
+  SEARCH_MOVIES_FAIL,
 } from '../actions/actionTypes';
+
 import { setSearchQueryUtil } from './utils';
 
 const INITIAL_STATE = {
   data: [],
   movie: [],
   movieSearchQuery: '',
+  movieSearchResults: [],
   loading: false,
 };
 
@@ -57,6 +62,23 @@ export const moviesReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         movieSearchQuery: setSearchQueryUtil(action.data),
+        loading: false,
+      };
+    case SEARCH_MOVIES_START:
+      return {
+        ...state,
+        loading: true,
+      };
+    case SEARCH_MOVIES_SUCCESS:
+      return {
+        ...state,
+        movieSearchResults: action.data,
+        loading: false,
+      };
+    case SEARCH_MOVIES_FAIL:
+      return {
+        ...state,
+        error: action.error,
         loading: false,
       };
 

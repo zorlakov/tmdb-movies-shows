@@ -22,7 +22,7 @@ const HomePage = (props) => {
         <Loader
           className='loader'
           type='ThreeDots'
-          color='#FFFFF'
+          color='#00000'
 
           //   timeout={2000}
         />
@@ -35,9 +35,12 @@ const HomePage = (props) => {
             <h1>NO RESULTS</h1>{' '}
           </div>
         ) */
-        <CardCollection items={showSearchResults} />
+        <CardCollection
+          items={showSearchResults}
+          count={showSearchResults.length}
+        />
       ) : (
-        <CardCollection items={list.shows.data} />
+        <CardCollection items={list.shows.data} count={10} />
       )}
       {/* 
       {loading ? (

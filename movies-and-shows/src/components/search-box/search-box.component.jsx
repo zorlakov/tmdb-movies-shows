@@ -5,7 +5,7 @@ import {
   setShowSearchQuery,
   setMovieSearchQuery,
 } from '../../redux/actions/index';
-import { fetchShowSearch } from '../../redux/actions/index';
+import { fetchShowSearch, fetchMovieSearch } from '../../redux/actions/index';
 
 class SearchBox extends React.Component {
   constructor() {
@@ -28,6 +28,9 @@ class SearchBox extends React.Component {
       }
     } else {
       this.props.setMovieSearchQuery(this.state.searchQuery);
+      if (this.state.searchQuery.length > 2) {
+        this.props.fetchMovieSearch(this.props.movieSearchQuery);
+      }
     }
   }
 
@@ -57,4 +60,5 @@ export default connect(mapStateToProps, {
   setShowSearchQuery,
   setMovieSearchQuery,
   fetchShowSearch,
+  fetchMovieSearch,
 })(SearchBox);
