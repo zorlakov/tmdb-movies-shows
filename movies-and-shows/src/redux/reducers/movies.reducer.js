@@ -9,6 +9,9 @@ import {
   SEARCH_MOVIES_START,
   SEARCH_MOVIES_SUCCESS,
   SEARCH_MOVIES_FAIL,
+  FETCH_MOVIE_TRAILER_START,
+  FETCH_MOVIE_TRAILER_SUCCESS,
+  FETCH_MOVIE_TRAILER_FAIL,
 } from '../actions/actionTypes';
 
 import { setSearchQueryUtil } from './utils';
@@ -18,6 +21,7 @@ const INITIAL_STATE = {
   movie: [],
   movieSearchQuery: '',
   movieSearchResults: [],
+  movieTrailerUrl: '',
   loading: false,
 };
 
@@ -80,6 +84,20 @@ export const moviesReducer = (state = INITIAL_STATE, action) => {
         ...state,
         error: action.error,
         loading: false,
+      };
+    case FETCH_MOVIE_TRAILER_START:
+      return {
+        ...state,
+      };
+    case FETCH_MOVIE_TRAILER_SUCCESS:
+      return {
+        ...state,
+        movieTrailerUrl: action.data,
+      };
+    case FETCH_MOVIE_TRAILER_FAIL:
+      return {
+        ...state,
+        error: action.error,
       };
 
     default:

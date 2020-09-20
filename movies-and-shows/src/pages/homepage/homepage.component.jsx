@@ -19,13 +19,7 @@ const HomePage = (props) => {
   return (
     <div className='cards'>
       {loading ? (
-        <Loader
-          className='loader'
-          type='ThreeDots'
-          color='#FFFFFF'
-
-          //   timeout={2000}
-        />
+        <Loader className='loader' type='ThreeDots' color='#FFFFFF' />
       ) : showSearchQuery.length > 2 ? (
         <CardCollection
           items={showSearchResults}

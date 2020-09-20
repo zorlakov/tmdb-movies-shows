@@ -1,5 +1,5 @@
 import React from 'react';
-import { URL_IMG, IMAGE_SIZE_M } from '../../utils/api';
+import { URL_IMG, IMAGE_SIZE_XL, URL_YOUTUBE } from '../../utils/api';
 import BackButton from '../back-button/back-button.component';
 import './details.styles.css';
 
@@ -8,21 +8,35 @@ class Details extends React.Component {
     const item = this.props.item;
     const show = this.props.show;
     const movie = this.props.movie;
+    const trailerUrl = this.props.trailerUrl;
+
+    console.log('TRAILER U DETAILS PAGE JE', trailerUrl);
 
     const showName = this.props.item.name;
     return (
       <div className='item-details'>
         <BackButton></BackButton>
         <div className='main-details'>
-          <img
-            src={
-              item.backdrop_path
-                ? URL_IMG + IMAGE_SIZE_M + item.backdrop_path
-                : 'https://www.brdtex.com/wp-content/uploads/2019/09/no-image-480x480.png'
-            }
-            alt='coverImage'
-            className='details-image'
-          ></img>
+          {trailerUrl ? (
+            <iframe
+              src={URL_YOUTUBE + trailerUrl.key}
+              frameborder='0'
+              allow='autoplay; encrypted-media'
+              allowfullscreen
+              title='video'
+              className='details-image'
+            />
+          ) : (
+            <img
+              src={
+                item.backdrop_path
+                  ? URL_IMG + IMAGE_SIZE_XL + item.backdrop_path
+                  : 'https://www.brdtex.com/wp-content/uploads/2019/09/no-image-480x480.png'
+              }
+              alt='coverImage'
+              className='details-image'
+            ></img>
+          )}
           {showName ? (
             <h1 className='details-title'>
               {' '}

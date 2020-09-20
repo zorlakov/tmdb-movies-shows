@@ -6,13 +6,7 @@ import './movies.styles.css';
 import Loader from 'react-loader-spinner';
 
 const MoviesPage = (props) => {
-  const {
-    data,
-    loading,
-    movieSearchResults,
-    movieSearchQuery,
-    //   showSearchQuery,
-  } = props;
+  const { data, loading, movieSearchResults, movieSearchQuery } = props;
   const { fetchTopMovies } = props;
   let list = [];
   useEffect(() => {
@@ -24,13 +18,7 @@ const MoviesPage = (props) => {
   return (
     <div className='cards'>
       {loading ? (
-        <Loader
-          className='loader'
-          type='ThreeDots'
-          color='#FFFFFF'
-
-          //   timeout={2000}
-        />
+        <Loader className='loader' type='ThreeDots' color='#FFFFFF' />
       ) : movieSearchQuery.length > 2 ? (
         <CardCollection
           items={movieSearchResults}

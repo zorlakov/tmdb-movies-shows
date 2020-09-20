@@ -9,6 +9,9 @@ import {
   SEARCH_MOVIES_START,
   SEARCH_MOVIES_SUCCESS,
   SEARCH_MOVIES_FAIL,
+  FETCH_MOVIE_TRAILER_START,
+  FETCH_MOVIE_TRAILER_SUCCESS,
+  FETCH_MOVIE_TRAILER_FAIL,
 } from './actionTypes';
 
 import {
@@ -17,6 +20,8 @@ import {
   URL_MOVIE_LIST,
   URL_MOVIES_SEARCH,
   URL_QUERY,
+  URL_MOVIE_TRAILER,
+  URL_VIDEO,
 } from '../../utils/api';
 
 const topMoviesFetchStart = () => {
@@ -83,6 +88,40 @@ const moviesSearchFetchFail = (error) => {
   return {
     type: SEARCH_MOVIES_FAIL,
     error,
+  };
+};
+
+const fetchMovieTrailerStart = () => {
+  return {
+    type: FETCH_MOVIE_TRAILER_START,
+  };
+};
+
+const fetchMovieTrailerSuccess = (data) => {
+  return {
+    type: FETCH_MOVIE_TRAILER_SUCCESS,
+    data,
+  };
+};
+
+const fetchMovieTrailerFail = (error) => {
+  return {
+    type: FETCH_MOVIE_TRAILER_FAIL,
+    error,
+  };
+};
+
+export const fetchMovieTrailer = (id) => {
+  let url = URL_MOVIE_TRAILER + id + URL_VIDEO + API_KEY;
+  return (dispatch) => {
+    dispatch(fetchMovieTrailerStart());
+    return fetch(url)
+      .then((response) => response.json())
+      .then((json) => json.results)
+      .then((data) => {
+        dispatch(fetchMovieTrailerSuccess(data));
+      })
+      .catch((err) => dispatch(fetchMovieTrailerFail(err)));
   };
 };
 
