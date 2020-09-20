@@ -13,7 +13,7 @@ const Header = () => (
     <Link to='/'>
       <CustomButton name={'shows'}></CustomButton>
     </Link>
-    <SearchBox />
+    <SearchBox timer={null} />
   </div>
 );
 

@@ -4,7 +4,6 @@ import { fetchTopMovies } from '../../redux/actions/index';
 import CardCollection from '../../components/card-collection/card-collection.component';
 import './movies.styles.css';
 import Loader from 'react-loader-spinner';
-import Card from '../../components/card/card.component';
 
 const MoviesPage = (props) => {
   const {
@@ -12,7 +11,7 @@ const MoviesPage = (props) => {
     loading,
     movieSearchResults,
     movieSearchQuery,
-    showSearchQuery,
+    //   showSearchQuery,
   } = props;
   const { fetchTopMovies } = props;
   let list = [];
@@ -28,7 +27,7 @@ const MoviesPage = (props) => {
         <Loader
           className='loader'
           type='ThreeDots'
-          color='#00000'
+          color='#FFFFFF'
 
           //   timeout={2000}
         />

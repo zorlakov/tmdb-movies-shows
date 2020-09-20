@@ -22,19 +22,11 @@ const HomePage = (props) => {
         <Loader
           className='loader'
           type='ThreeDots'
-          color='#00000'
+          color='#FFFFFF'
 
           //   timeout={2000}
         />
       ) : showSearchQuery.length > 2 ? (
-        /*     showSearchResults ? (
-          <CardCollection items={showSearchResults} />
-        ) : (
-          <div className='no-results'>
-            {' '}
-            <h1>NO RESULTS</h1>{' '}
-          </div>
-        ) */
         <CardCollection
           items={showSearchResults}
           count={showSearchResults.length}
@@ -42,18 +34,6 @@ const HomePage = (props) => {
       ) : (
         <CardCollection items={list.shows.data} count={10} />
       )}
-      {/* 
-      {loading ? (
-        <Loader
-          className='loader'
-          type='Grid'
-          color='#FFFFF'
-
-          //   timeout={2000}
-        />
-      ) : (
-        <CardCollection items={list.shows.data} />
-      )} */}
     </div>
   );
 };

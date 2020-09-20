@@ -21,17 +21,20 @@ class SearchBox extends React.Component {
   };
 
   componentDidUpdate() {
-    if (window.location.pathname === '/') {
-      this.props.setShowSearchQuery(this.state.searchQuery);
-      if (this.state.searchQuery.length > 2) {
-        this.props.fetchShowSearch(this.props.showSearchQuery);
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => {
+      if (window.location.pathname === '/') {
+        this.props.setShowSearchQuery(this.state.searchQuery);
+        if (this.state.searchQuery.length > 2) {
+          this.props.fetchShowSearch(this.props.showSearchQuery);
+        }
+      } else {
+        this.props.setMovieSearchQuery(this.state.searchQuery);
+        if (this.state.searchQuery.length > 2) {
+          this.props.fetchMovieSearch(this.props.movieSearchQuery);
+        }
       }
-    } else {
-      this.props.setMovieSearchQuery(this.state.searchQuery);
-      if (this.state.searchQuery.length > 2) {
-        this.props.fetchMovieSearch(this.props.movieSearchQuery);
-      }
-    }
+    }, 1000);
   }
 
   render() {

@@ -2,8 +2,6 @@ import React from 'react';
 import { URL_IMG, IMAGE_SIZE_M } from '../../utils/api';
 import './details.styles.css';
 
-// this.props.items.data se mapiralo u card collection
-
 class Details extends React.Component {
   render() {
     const item = this.props.item;
@@ -12,8 +10,6 @@ class Details extends React.Component {
 
     const showName = this.props.item.name;
     return (
-      // <div className='movie-details'>Name: {this.props.item.name}</div>
-
       <div className='item-details'>
         <div className='main-details'>
           <img
@@ -57,10 +53,6 @@ class Details extends React.Component {
                 <p> Status: {movie.status}</p>
               </div>
             )}
-
-            {/*  {this.props.genres.map((genre) => (
-              <p className='overview-text'> {genre.name} </p>
-            ))} */}
           </div>
         </div>
       </div>
