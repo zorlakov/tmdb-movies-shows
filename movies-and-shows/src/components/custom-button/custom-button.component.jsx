@@ -1,7 +1,7 @@
 import React from 'react';
 import tvIcon from '../../assets/television.svg';
 import movieIcon from '../../assets/clapperboard.svg';
-import './customButton.styles.css';
+import './custom-button.styles.css';
 
 const CustomButton = ({ name }) => (
   <button className='custom-button'>

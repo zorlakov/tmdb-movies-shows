@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomButton from '../customButton/customButton.component';
+import CustomButton from '../custom-button/custom-button.component';
 import SearchBox from '../search-box/search-box.component';
 import { Link } from 'react-router-dom';
 

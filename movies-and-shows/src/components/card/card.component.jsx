@@ -21,7 +21,7 @@ const Card = ({ item }) => (
       className='image'
     ></img>
 
-    <div className='basic-info'>
+    <div className='item-title'>
       {item.name ? (
         <p className='title'>{item.name}</p>
       ) : (
