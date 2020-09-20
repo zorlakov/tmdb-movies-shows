@@ -9,8 +9,7 @@ import {
   SEARCH_MOVIES_START,
   SEARCH_MOVIES_SUCCESS,
   SEARCH_MOVIES_FAIL,
-} from /*   SEARCH_MOVIES_UPDATE,
- */ '../actions/actionTypes';
+} from '../actions/actionTypes';
 
 import { setSearchQueryUtil } from './utils';
 

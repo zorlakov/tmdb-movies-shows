@@ -9,8 +9,7 @@ import {
   SEARCH_MOVIES_START,
   SEARCH_MOVIES_SUCCESS,
   SEARCH_MOVIES_FAIL,
-} from /*   SEARCH_MOVIES_UPDATE,
- */ './actionTypes';
+} from './actionTypes';
 
 import {
   API_KEY,
@@ -66,14 +65,7 @@ export const setMovieSearchQuery = (data) => {
     data,
   };
 };
-/* 
-export const updateMovieSearch = (data) => {
-  return {
-    type: SEARCH_MOVIES_UPDATE,
-    data,
-  };
-};
- */
+
 const moviesSearchFetchStart = () => {
   return {
     type: SEARCH_MOVIES_START,

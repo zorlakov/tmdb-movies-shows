@@ -1,5 +1,6 @@
 import React from 'react';
 import { URL_IMG, IMAGE_SIZE_M } from '../../utils/api';
+import BackButton from '../back-button/back-button.component';
 import './details.styles.css';
 
 class Details extends React.Component {
@@ -11,9 +12,14 @@ class Details extends React.Component {
     const showName = this.props.item.name;
     return (
       <div className='item-details'>
+        <BackButton></BackButton>
         <div className='main-details'>
           <img
-            src={URL_IMG + IMAGE_SIZE_M + item.backdrop_path}
+            src={
+              item.backdrop_path
+                ? URL_IMG + IMAGE_SIZE_M + item.backdrop_path
+                : 'https://www.brdtex.com/wp-content/uploads/2019/09/no-image-480x480.png'
+            }
             alt='coverImage'
             className='details-image'
           ></img>
