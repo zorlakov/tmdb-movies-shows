@@ -10,8 +10,6 @@ class Details extends React.Component {
     const movie = this.props.movie;
     const trailerUrl = this.props.trailerUrl;
 
-    console.log('TRAILER U DETAILS PAGE JE', trailerUrl);
-
     const showName = this.props.item.name;
     return (
       <div className='item-details'>

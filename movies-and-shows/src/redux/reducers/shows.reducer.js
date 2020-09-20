@@ -9,6 +9,9 @@ import {
   SEARCH_SHOWS_START,
   SEARCH_SHOWS_SUCCESS,
   SEARCH_SHOWS_FAIL,
+  FETCH_SHOW_TRAILER_START,
+  FETCH_SHOW_TRAILER_SUCCESS,
+  FETCH_SHOW_TRAILER_FAIL,
 } from '../actions/actionTypes';
 
 import { setSearchQueryUtil } from './utils';
@@ -18,6 +21,7 @@ const INITIAL_STATE = {
   show: [],
   showSearchQuery: '',
   showSearchResults: [],
+  showTrailerUrl: '',
   loading: false,
 };
 
@@ -79,6 +83,20 @@ export const showsReducer = (state = INITIAL_STATE, action) => {
         ...state,
         error: action.error,
         loading: false,
+      };
+    case FETCH_SHOW_TRAILER_START:
+      return {
+        ...state,
+      };
+    case FETCH_SHOW_TRAILER_SUCCESS:
+      return {
+        ...state,
+        showTrailerUrl: action.data,
+      };
+    case FETCH_SHOW_TRAILER_FAIL:
+      return {
+        ...state,
+        error: action.error,
       };
 
     default:

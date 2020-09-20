@@ -4,6 +4,7 @@ export { fetchTopShows } from './shows.actions';
 export { fetchShowDetails } from './shows.actions';
 export { fetchShowSearch } from './shows.actions';
 export { setShowSearchQuery } from './shows.actions';
+export { fetchShowTrailer } from './shows.actions';
 
 // Movies
 export { fetchTopMovies } from './movies.actions';

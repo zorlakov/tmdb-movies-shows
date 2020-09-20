@@ -3,6 +3,7 @@ export const API_KEY = '?api_key=7cf5283d520db6ff54c3a9e081e893ea';
 export const URL_SHOW_LIST = 'https://api.themoviedb.org/3/tv/top_rated';
 export const URL_SHOW_DETAILS = 'https://api.themoviedb.org/3/tv/';
 export const URL_SHOWS_SEARCH = 'https://api.themoviedb.org/3/search/tv';
+export const URL_SHOW_TRAILER = 'https://api.themoviedb.org/3/tv/';
 
 export const URL_QUERY = '&query=';
 

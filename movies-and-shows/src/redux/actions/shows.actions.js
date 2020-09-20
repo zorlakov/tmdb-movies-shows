@@ -9,6 +9,9 @@ import {
   SEARCH_SHOWS_START,
   SEARCH_SHOWS_SUCCESS,
   SEARCH_SHOWS_FAIL,
+  FETCH_SHOW_TRAILER_START,
+  FETCH_SHOW_TRAILER_SUCCESS,
+  FETCH_SHOW_TRAILER_FAIL,
 } from './actionTypes';
 
 import {
@@ -17,6 +20,8 @@ import {
   URL_SHOW_LIST,
   URL_SHOWS_SEARCH,
   URL_QUERY,
+  URL_SHOW_TRAILER,
+  URL_VIDEO,
 } from '../../utils/api';
 
 const topShowsFetchStart = () => {
@@ -83,6 +88,40 @@ const showsSearchFetchFail = (error) => {
   return {
     type: SEARCH_SHOWS_FAIL,
     error,
+  };
+};
+
+const fetchShowTrailerStart = () => {
+  return {
+    type: FETCH_SHOW_TRAILER_START,
+  };
+};
+
+const fetchShowTrailerSuccess = (data) => {
+  return {
+    type: FETCH_SHOW_TRAILER_SUCCESS,
+    data,
+  };
+};
+
+const fetchShowTrailerFail = (error) => {
+  return {
+    type: FETCH_SHOW_TRAILER_FAIL,
+    error,
+  };
+};
+
+export const fetchShowTrailer = (id) => {
+  let url = URL_SHOW_TRAILER + id + URL_VIDEO + API_KEY;
+  return (dispatch) => {
+    dispatch(fetchShowTrailerStart());
+    return fetch(url)
+      .then((response) => response.json())
+      .then((json) => json.results)
+      .then((data) => {
+        dispatch(fetchShowTrailerSuccess(data));
+      })
+      .catch((err) => dispatch(fetchShowTrailerFail(err)));
   };
 };
 
