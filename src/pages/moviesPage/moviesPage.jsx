@@ -11,6 +11,7 @@ const MoviesPage = (props) => {
   let list = [];
   useEffect(() => {
     fetchTopMovies();
+    window.scrollTo(0, 0);
   }, [fetchTopMovies]);
 
   list = data;

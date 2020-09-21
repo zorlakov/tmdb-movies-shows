@@ -1,6 +1,7 @@
 .header {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   align-items: center;
   height: 10vh;
   top: 0;
@@ -13,4 +14,9 @@
 
 .top-rated {
   color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.search {
+  width: 20vw;
 }

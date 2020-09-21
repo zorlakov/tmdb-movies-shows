@@ -38,6 +38,7 @@ class SearchBox extends React.Component {
   render() {
     return (
       <input
+        className='search-box'
         type='search'
         placeholder={'Search by title'}
         onChange={this.handleChange}

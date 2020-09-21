@@ -12,6 +12,7 @@ const HomePage = (props) => {
 
   useEffect(() => {
     fetchTopShows();
+    window.scrollTo(0, 0);
   }, [fetchTopShows]);
 
   list = data;

@@ -9,10 +9,10 @@ const Header = () => (
   <div className='header'>
     <div className='nav-buttons'>
       <Link to='/movies'>
-        <CustomButton name={'movies'}></CustomButton>
+        <CustomButton name={'Movies'}></CustomButton>
       </Link>
       <Link to='/shows'>
-        <CustomButton name={'shows'}></CustomButton>
+        <CustomButton name={'Shows'}></CustomButton>
       </Link>
     </div>
 
@@ -23,7 +23,9 @@ const Header = () => (
         <h1>Top 10 TV shows</h1>
       )}
     </div>
-    <SearchBox timer={null} />
+    <div className='search'>
+      <SearchBox timer={null} />
+    </div>
   </div>
 );
 

@@ -18,6 +18,7 @@
 
 .other-info {
   margin: auto;
+  font-family: 'Lora', serif;
 }
 
 .overview-text {
@@ -33,4 +34,8 @@
 .back-button {
   height: 5em;
   width: 5em;
+}
+
+.details-title {
+  font-family: 'Montserrat', sans-serif;
 }
