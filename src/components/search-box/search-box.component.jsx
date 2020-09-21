@@ -44,6 +44,7 @@ class SearchBox extends React.Component {
         type='search'
         placeholder={'Search by title'}
         onChange={this.handleChange}
+        value={this.props.movieSearchQuery}
       />
     );
   }

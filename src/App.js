@@ -10,12 +10,28 @@ import './App.css';
 function App() {
   return (
     <div className='App'>
-      <Header className='sticky-header' />
       <Switch>
         <Redirect exact from='/' to='/shows' />
-
-        <Route exact path='/shows' component={HomePage} />
-        <Route exact path='/movies' component={MoviesPage} />
+        <Route
+          exact
+          path='/shows'
+          render={() => (
+            <div>
+              <Header />
+              <HomePage />
+            </div>
+          )}
+        />
+        <Route
+          exact
+          path='/movies'
+          render={() => (
+            <div>
+              <Header />
+              <MoviesPage />
+            </div>
+          )}
+        />
         <Route
           name='details'
           exact
