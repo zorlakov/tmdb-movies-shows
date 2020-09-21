@@ -17,8 +17,9 @@ class Details extends React.Component {
     const showName = this.props.item.name;
     return (
       <div className='item-details'>
-        <BackButton className='back-button'></BackButton>
         <div className='main-details'>
+          <BackButton className='back-button'></BackButton>
+
           {trailerUrl ? (
             <iframe
               src={URL_YOUTUBE + trailerUrl.key}
@@ -71,7 +72,7 @@ class Details extends React.Component {
               ]
             ) : (
               <div className='movie-info'>
-                <p> Runtime: {movie.runtime} </p>
+                <p> Runtime: {movie.runtime} minutes</p>
                 <p> Status: {movie.status}</p>
               </div>
             )}

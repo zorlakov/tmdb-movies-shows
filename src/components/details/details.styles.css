@@ -1,25 +1,23 @@
 .item-details {
+  font-family: 'Ubuntu';
   display: flex;
   flex-direction: column;
-  font-family: 'Ubuntu';
-  position: relative;
-  height: 100vh;
-
-  background-color: white;
-  margin: auto;
+  color: white;
+  background-color: #130f40;
+  background-image: linear-gradient(315deg, #130f40 0%, #000000 74%);
 }
 
 .main-details {
   margin-left: 5.5em;
-  margin-top: 5em;
-
+  margin-top: 1em;
   text-align: center;
   font-size: 0.8em;
+  display: flex;
+  flex-direction: column;
 }
 
 .other-info {
-  margin-left: 3em;
-  margin-top: 3em;
+  margin: auto;
 }
 
 .overview-text {
@@ -33,7 +31,6 @@
 }
 
 .back-button {
-  width: 20vw;
-  height: 8vh;
-  margin-top: 10vh;
+  height: 5em;
+  width: 5em;
 }
