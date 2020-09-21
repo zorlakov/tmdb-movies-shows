@@ -4,6 +4,10 @@ import BackButton from '../back-button/back-button.component';
 import './details.styles.css';
 
 class Details extends React.Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     const item = this.props.item;
     const show = this.props.show;
@@ -13,14 +17,14 @@ class Details extends React.Component {
     const showName = this.props.item.name;
     return (
       <div className='item-details'>
-        <BackButton></BackButton>
+        <BackButton className='back-button'></BackButton>
         <div className='main-details'>
           {trailerUrl ? (
             <iframe
               src={URL_YOUTUBE + trailerUrl.key}
-              frameborder='0'
+              //   frameborder='0'
               allow='autoplay; encrypted-media'
-              allowfullscreen
+              // allowfullscreen
               title='video'
               className='details-image'
             />

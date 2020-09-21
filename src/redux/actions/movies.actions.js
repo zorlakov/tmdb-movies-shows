@@ -16,11 +16,10 @@ import {
 
 import {
   API_KEY,
-  URL_MOVIE_DETAILS,
+  URL_MOVIE,
   URL_MOVIE_LIST,
   URL_MOVIES_SEARCH,
   URL_QUERY,
-  URL_MOVIE_TRAILER,
   URL_VIDEO,
 } from '../../utils/api';
 
@@ -112,7 +111,7 @@ const fetchMovieTrailerFail = (error) => {
 };
 
 export const fetchMovieTrailer = (id) => {
-  let url = URL_MOVIE_TRAILER + id + URL_VIDEO + API_KEY;
+  let url = URL_MOVIE + id + URL_VIDEO + API_KEY;
   return (dispatch) => {
     dispatch(fetchMovieTrailerStart());
     return fetch(url)
@@ -154,7 +153,7 @@ export const fetchTopMovies = () => {
 };
 
 export const fetchMovieDetails = (id) => {
-  let url = URL_MOVIE_DETAILS + id + API_KEY;
+  let url = URL_MOVIE + id + API_KEY;
   return (dispatch) => {
     dispatch(movieDetailsFetchStart());
     return fetch(url)

@@ -36,9 +36,6 @@ class SearchBox extends React.Component {
   }
 
   render() {
-    let path = window.location.pathname;
-    console.log('PATH JE', path);
-
     return (
       <input
         type='search'

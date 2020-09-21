@@ -41,12 +41,14 @@ const DetailsPage = (props) => {
     <div>
       {props.location.state.item.name ? (
         <Details
+          key={show.id}
           item={props.location.state.item}
           show={show}
           trailerUrl={showTrailerUrl}
         />
       ) : (
         <Details
+          key={movie.id}
           item={props.location.state.item}
           movie={movie}
           trailerUrl={movieTrailerUrl}

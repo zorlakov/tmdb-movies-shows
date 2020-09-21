@@ -16,11 +16,10 @@ import {
 
 import {
   API_KEY,
-  URL_SHOW_DETAILS,
+  URL_SHOW,
   URL_SHOW_LIST,
   URL_SHOWS_SEARCH,
   URL_QUERY,
-  URL_SHOW_TRAILER,
   URL_VIDEO,
 } from '../../utils/api';
 
@@ -112,7 +111,7 @@ const fetchShowTrailerFail = (error) => {
 };
 
 export const fetchShowTrailer = (id) => {
-  let url = URL_SHOW_TRAILER + id + URL_VIDEO + API_KEY;
+  let url = URL_SHOW + id + URL_VIDEO + API_KEY;
   return (dispatch) => {
     dispatch(fetchShowTrailerStart());
     return fetch(url)
@@ -155,7 +154,7 @@ export const fetchTopShows = () => {
 };
 
 export const fetchShowDetails = (id) => {
-  let url = URL_SHOW_DETAILS + id + API_KEY;
+  let url = URL_SHOW + id + API_KEY;
   return (dispatch) => {
     dispatch(showDetailsFetchStart());
     return fetch(url)

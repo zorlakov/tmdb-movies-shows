@@ -1,17 +1,18 @@
 .item-details {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   font-family: 'Ubuntu';
   position: relative;
-  height: 90vh;
-  width: 100vw;
+  height: 100vh;
+
   background-color: white;
+  margin: auto;
 }
 
 .main-details {
   margin-left: 5.5em;
   margin-top: 5em;
-  width: 31vw;
+
   text-align: center;
   font-size: 0.8em;
 }
@@ -26,6 +27,13 @@
 }
 
 .details-image {
-  height: 45vh;
-  width: 31vw;
+  margin: auto;
+  height: 55vh;
+  width: 65vw;
+}
+
+.back-button {
+  width: 20vw;
+  height: 8vh;
+  margin-top: 10vh;
 }
