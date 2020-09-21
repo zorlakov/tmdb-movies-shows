@@ -1,0 +1,16 @@
+.cards {
+  width: 100vw;
+
+  background: #301934;
+}
+
+.loader {
+  height: 90vh;
+  padding-top: 15em;
+  padding-left: 45%;
+}
+
+.no-results {
+  font-size: 100px;
+  padding-top: 100px;
+}
