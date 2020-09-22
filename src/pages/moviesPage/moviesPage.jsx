@@ -18,6 +18,13 @@ const MoviesPage = (props) => {
 
   return (
     <div className='cards'>
+      <div className='headline'>
+        {window.location.pathname === '/movies' ? (
+          <h1>Top 10 movies</h1>
+        ) : (
+          <h1>Top 10 TV shows</h1>
+        )}
+      </div>
       {loading ? (
         <Loader className='loader' type='ThreeDots' color='#FFFFFF' />
       ) : movieSearchQuery.length > 2 ? (

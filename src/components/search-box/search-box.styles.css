@@ -1,3 +1,11 @@
 .search-box {
-  width: 18;
+  background: none;
+  border: 2px solid white;
+  height: 3.5vh;
+  border-radius: 5px;
+  color: white;
+}
+
+.search-box::placeholder {
+  color: white;
 }

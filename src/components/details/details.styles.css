@@ -39,3 +39,24 @@
 .details-title {
   font-family: 'Montserrat', sans-serif;
 }
+
+@media only screen and (max-width: 600px) {
+  .details-image {
+    height: 45vh;
+    width: 100vw;
+    margin-top: 1em;
+  }
+
+  .main-details {
+    margin-left: 0;
+  }
+
+  .overview-text {
+    width: 90vw;
+  }
+
+  .back-icon {
+    margin-left: 1.5em;
+    margin-top: 0.75em;
+  }
+}
