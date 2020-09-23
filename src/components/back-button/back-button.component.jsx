@@ -10,14 +10,12 @@ class BackButton extends React.Component {
 
   render() {
     return (
-      /*       <button className='back-button' onClick={this.goBack}> */
       <img
         alt='backIcon'
         className='back-icon'
         src={backIcon}
         onClick={this.goBack}
       />
-      /*  </button> */
     );
   }
 }

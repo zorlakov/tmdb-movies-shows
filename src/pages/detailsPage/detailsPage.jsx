@@ -7,6 +7,7 @@ import {
   fetchShowTrailer,
 } from '../../redux/actions/index';
 import Details from '../../components/details/details.component';
+
 import './detailsPage.styles.css';
 
 const DetailsPage = (props) => {

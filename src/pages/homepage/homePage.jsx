@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchTopShows } from '../../redux/actions/index';
 import CardCollection from '../../components/card-collection/card-collection.component';
-import './homePage.styles.css';
 import Loader from 'react-loader-spinner';
+
+import './homePage.styles.css';
 
 const HomePage = (props) => {
   const { data, loading, showSearchResults, showSearchQuery } = props;

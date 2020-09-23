@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchTopMovies } from '../../redux/actions/index';
 import CardCollection from '../../components/card-collection/card-collection.component';
-import './moviesPage.styles.css';
 import Loader from 'react-loader-spinner';
+
+import './moviesPage.styles.css';
 
 const MoviesPage = (props) => {
   const { data, loading, movieSearchResults, movieSearchQuery } = props;

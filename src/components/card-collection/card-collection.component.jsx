@@ -1,7 +1,8 @@
 import React from 'react';
 import Card from '../card/card.component';
-import './card-collection.styles.css';
 import { Link } from 'react-router-dom';
+
+import './card-collection.styles.css';
 
 class CardCollection extends React.Component {
   render() {
