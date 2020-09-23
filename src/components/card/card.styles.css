@@ -17,10 +17,11 @@
 }
 
 .item-title {
-  color: white;
+  color: #e95420;
   height: 10%;
   text-align: center;
   font-size: 1em;
+  text-transform: uppercase;
 }
 
 @media only screen and (max-width: 700px) {
