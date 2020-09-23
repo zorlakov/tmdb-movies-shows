@@ -1,6 +1,9 @@
 import React from 'react';
 import { URL_IMG, IMAGE_SIZE_XL, URL_YOUTUBE } from '../../utils/api';
 import BackButton from '../back-button/back-button.component';
+import starRating from '../../assets/star.svg';
+import runtimeIcon from '../../assets/clock.svg';
+
 import './details.styles.css';
 
 class Details extends React.Component {
@@ -23,9 +26,7 @@ class Details extends React.Component {
           {trailerUrl ? (
             <iframe
               src={URL_YOUTUBE + trailerUrl.key}
-              //   frameborder='0'
               allow='autoplay; encrypted-media'
-              // allowfullscreen
               title='video'
               className='details-image'
             />
@@ -51,32 +52,63 @@ class Details extends React.Component {
               {item.title} ({item.release_date.substring(0, 4)})
             </h1>
           )}
+          <p className='containter'>
+            <span className='runtime-info'>
+              <img
+                alt='runtime-clock'
+                src={runtimeIcon}
+                className='runtime-icon'
+              />
+              {showName ? (
+                <span className='vote-info'>
+                  {' '}
+                  {show.episode_run_time} minutes{' '}
+                </span>
+              ) : (
+                <span className='vote-info'> {movie.runtime} minutes</span>
+              )}
+            </span>
+
+            <span className='star-ratings'>
+              <img alt='starIcon' src={starRating} className='star-icon' />
+              <span className='vote-info'> {item.vote_average}/10 </span>
+              <span className='vote-info'> ({item.vote_count} votes)</span>
+            </span>
+          </p>
         </div>
 
         <div className='other-info'>
-          <div className='simple-text'>
-            <p className='overview-text'>
-              Summary: <br></br>
-              {item.overview}
-            </p>
-            <p>Rating: {item.vote_average}</p>
-            <p>Number of votes: {item.vote_count}</p>
-            {showName ? (
-              [
-                <div className='show-info'>
-                  <p>Seasons: {show.number_of_seasons} </p>
-                  <p> Episodes: {show.number_of_episodes} </p>
-                  <p>Episode length: {show.episode_run_time} minutes </p>
-                  <p> Status: {show.status} </p>
-                </div>,
-              ]
-            ) : (
-              <div className='movie-info'>
-                <p> Runtime: {movie.runtime} minutes</p>
-                <p> Status: {movie.status}</p>
-              </div>
-            )}
-          </div>
+          <p className='overview-text'>
+            <span className='info-name'>
+              Synopsis: <br></br> <br></br>
+            </span>
+            <span className='info-text'>{item.overview}</span>
+          </p>
+          {showName ? (
+            [
+              <div className='show-info'>
+                <p>
+                  <span className='info-name'>Seasons: </span>
+                  <span className='info-text'> {show.number_of_seasons} </span>
+                </p>
+                <p>
+                  <span className='info-name'>Episodes: </span>{' '}
+                  <span className='info-text'> {show.number_of_episodes} </span>
+                </p>
+                <p>
+                  <span className='info-name'>Status: </span>
+                  <span className='info-text'> {show.status} </span>
+                </p>
+              </div>,
+            ]
+          ) : (
+            <div className='movie-info'>
+              <p>
+                <span className='info-name'>Status: </span>
+                <span className='info-text'> {movie.status} </span>
+              </p>
+            </div>
+          )}
         </div>
       </div>
     );
