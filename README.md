@@ -6,7 +6,7 @@ React app which displays top rated movies and TV shows, with a search all movies
 
 Please follow these instructions to start the app:
 
-1. Clone the depository:
+1. Clone the repository:
 
 git clone https://github.com/zorlakov/tmdb-movies-shows.git
 
